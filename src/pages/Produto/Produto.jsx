@@ -100,9 +100,8 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
               />
             </div>
           </section>
-          <section className="produto__container">
-            <RelatedProducts relatedProducts={relatedProducts} />
-          </section>
+
+          <RelatedProducts relatedProducts={relatedProducts} />
         </>
       )}
     </>

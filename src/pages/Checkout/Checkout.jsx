@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Button } from "../../components/Button/Button";
 import axios from "axios";
 import { useEffect } from "react";
-import Cards from './PaymentsCards/Cards'
+import Cards from "./PaymentsCards/Cards";
 import Sucess from "./PaymentsCards/SucessPayment/Sucess";
 
 const Checkout = ({
@@ -15,15 +15,15 @@ const Checkout = ({
   customerData,
   setProdutosCarrinho,
   addressData,
-  url
+  url,
 }) => {
   const [ignore, setIgnore] = useState(true);
-//Valor dos Input Radio
-  const [pixValue, setPixValue] = useState()
+  //Valor dos Input Radio
+  const [pixValue, setPixValue] = useState();
 
   const valueLog = (event) => {
-    setPixValue(event.target.value)
-  }
+    setPixValue(event.target.value);
+  };
 
   const handleMinusQuant = (key) => {
     if (produtosCarrinho[key].quantidade > 1) {
@@ -123,7 +123,10 @@ const Checkout = ({
                 size: produtosCarrinho[i].tamanho.toLowerCase(),
               });
             }
-            await axios.post(`${url}/sms`, {pedido_id: resultado.data[0].pedido_id, customer_id})
+            await axios.post(`${url}/sms`, {
+              pedido_id: resultado.data[0].pedido_id,
+              customer_id,
+            });
           });
 
         localStorage.removeItem("produtosCarrinho");
@@ -146,7 +149,7 @@ const Checkout = ({
             <NavLink to="/Login">
               <div
                 style={{
-                  width: "100vw",
+                  width: "100%",
                   height: "60vh",
                   display: "flex",
                   justifyContent: "center",
@@ -281,8 +284,11 @@ const Checkout = ({
                         </div>
 
                         <div className="checkout__metodo-pagamento">
-                          <input type="radio" name="payment-method" id="pix"
-                            value='Pix'
+                          <input
+                            type="radio"
+                            name="payment-method"
+                            id="pix"
+                            value="Pix"
                             onChange={valueLog}
                             onClick={valueLog}
                           />
@@ -291,12 +297,14 @@ const Checkout = ({
                               <i className="fa-brands fa-pix"></i>
                               PIX
                             </div>
-
                           </label>
                         </div>
                         <div className="checkout__metodo-pagamento">
-                          <input type="radio" name="payment-method" id="boleto"
-                            value='Boleto'
+                          <input
+                            type="radio"
+                            name="payment-method"
+                            id="boleto"
+                            value="Boleto"
                             onChange={(e) => setPixValue(e.target.value)}
                             onClick={valueLog}
                           />
@@ -308,8 +316,11 @@ const Checkout = ({
                           </label>
                         </div>
                         <div className="checkout__metodo-pagamento">
-                          <input type="radio" name="payment-method" id="cartao-credito"
-                            value='Cartão de crédito'
+                          <input
+                            type="radio"
+                            name="payment-method"
+                            id="cartao-credito"
+                            value="Cartão de crédito"
                             onChange={(e) => setPixValue(e.target.value)}
                             onClick={valueLog}
                           />
@@ -321,46 +332,49 @@ const Checkout = ({
                           </label>
                         </div>
 
-                        {
-                          pixValue === 'Pix' && (
-                            < Cards styleCards={'CardPix'} text={<>
-                              <h3>Copie o codigo abaixo</h3>
-                              <br />
-                              <p className="txt-pix-code">#b3_?4?hV;nUx7VPDNz+b*EA!%Z$Kv7</p>
+                        {pixValue === "Pix" && (
+                          <Cards
+                            styleCards={"CardPix"}
+                            text={
+                              <>
+                                <h3>Copie o codigo abaixo</h3>
+                                <br />
+                                <p className="txt-pix-code">
+                                  #b3_?4?hV;nUx7VPDNz+b*EA!%Z$Kv7
+                                </p>
+                              </>
+                            }
+                          />
+                        )}
 
-                            </>
-                            } />
-                          )
-                        }
+                        {pixValue === "Boleto" && (
+                          <Cards
+                            styleCards={"CardBoleto"}
+                            text={<button>Gerar Boleto</button>}
+                          />
+                        )}
 
-                        {
-                          pixValue === 'Boleto' && (
-                            < Cards styleCards={'CardBoleto'} text={
-                              <button>Gerar Boleto</button>
-                            } />
-                          )
-                        }
-
-                        {
-                          pixValue === 'Cartão de crédito' && (
-                            < Cards styleCards={'CardCredit'} text={<>
-                              <label >Nome</label>
-                              <input type="text" />
-                              <br />
-                              <label >Numero cartão</label>
-                              <input type="number" />
-                              <br />
-                              <label >CVV</label>
-                              <input type="number" />
-
-                            </>} />
-                          )
-                        }
+                        {pixValue === "Cartão de crédito" && (
+                          <Cards
+                            styleCards={"CardCredit"}
+                            text={
+                              <>
+                                <label>Nome</label>
+                                <input type="text" />
+                                <br />
+                                <label>Numero cartão</label>
+                                <input type="number" />
+                                <br />
+                                <label>CVV</label>
+                                <input type="number" />
+                              </>
+                            }
+                          />
+                        )}
                         <Button
                           txt={"Finalizar Compra"}
                           fn={finalizePurchase}
                         />
-
                       </div>
                     </div>
                   </div>

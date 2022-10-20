@@ -114,3 +114,10 @@ body::-webkit-scrollbar-thumb {
 footer::-webkit-scrollbar {
   background-color: transparent;
 }
+
+.justify-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
