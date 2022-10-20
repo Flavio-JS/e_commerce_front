@@ -1,0 +1,27 @@
+.section__userConfigs {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.section__userConfigs h1 {
+  margin-top: 20px;
+  font-size: 20px;
+}
+
+.userConfigs__card {
+  justify-content: center;
+  align-items: center;
+}
+
+.userConfigs__button {
+  margin-bottom: 10px;
+}
+
+.userConfigs__login {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+}

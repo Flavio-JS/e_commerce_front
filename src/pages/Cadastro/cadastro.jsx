@@ -5,37 +5,37 @@ import { Button } from "../../components/Button/Button";
 import { NavLink } from "react-router-dom";
 
 export const Cadastro = ({ url }) => {
-  let [name, setName] = useState("Nome");
-  let [email, setEmail] = useState("Email");
-  let [password, setPassword] = useState("Senha");
-  let [phone, setPhone] = useState("Nº Celular");
+  let [name, setName] = useState();
+  let [email, setEmail] = useState();
+  let [password, setPassword] = useState();
+  let [phone, setPhone] = useState();
 
-  let [address, setAddress] = useState("Endereço");
-  let [uf, setUf] = useState("UF");
-  let [city, setCity] = useState("Cidade");
-  let [cep, setCep] = useState("CEP");
+  let [address, setAddress] = useState();
+  let [uf, setUf] = useState();
+  let [city, setCity] = useState();
+  let [cep, setCep] = useState();
   let [showCadastro, setShowCadastro] = useState(true);
 
   const cadastro = async () => {
     if (
       name === "" ||
-      name === "Nome" ||
+      name === undefined ||
       email === "" ||
-      email === "Email" ||
+      email === undefined ||
       password === "" ||
-      password === "Senha" ||
+      password === undefined ||
       phone === "" ||
       phone.length < 13 ||
       address === "" ||
-      address === "Endereço" ||
+      address === undefined ||
       uf === "" ||
-      uf === "UF" ||
+      uf === undefined ||
       uf.length < 2 ||
       city === "" ||
-      city === "Cidade" ||
+      city === undefined ||
       cep === "" ||
       cep.length < 8 ||
-      cep === "CEP"
+      cep === undefined
     ) {
       alert("CAMPO(S) NÃO PREENCHIDO(S) OU PREENCHIDOS INCORRETAMENTE");
     } else {
@@ -73,7 +73,7 @@ export const Cadastro = ({ url }) => {
                 className="input__field"
                 type="text"
                 name="name"
-                placeholder="Nome"
+                placeholder=" "
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -84,7 +84,7 @@ export const Cadastro = ({ url }) => {
                 className="input__field"
                 type="email"
                 name="email"
-                placeholder="Email"
+                placeholder=" "
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
@@ -95,7 +95,7 @@ export const Cadastro = ({ url }) => {
                 className="input__field"
                 type="password"
                 name="password"
-                placeholder="senha"
+                placeholder=" "
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -106,7 +106,7 @@ export const Cadastro = ({ url }) => {
                 className="input__field"
                 type="text"
                 name="phone"
-                placeholder="(12)987654321"
+                placeholder=" "
                 maxLength="13"
                 value={phone}
                 onChange={(e) => setPhone(e.target.value)}
@@ -118,7 +118,7 @@ export const Cadastro = ({ url }) => {
                 className="input__field"
                 type="text"
                 name="uf"
-                placeholder="GO"
+                placeholder=" "
                 maxLength="2"
                 value={uf}
                 onChange={(e) => setUf(e.target.value.toUpperCase())}
@@ -130,7 +130,7 @@ export const Cadastro = ({ url }) => {
                 className="input__field"
                 type="text"
                 name="city"
-                placeholder="Cidade"
+                placeholder=" "
                 value={city}
                 onChange={(e) => setCity(e.target.value)}
               />
@@ -141,7 +141,7 @@ export const Cadastro = ({ url }) => {
                 className="input__field"
                 type="text"
                 name="cep"
-                placeholder="CEP"
+                placeholder=" "
                 maxLength="8"
                 value={cep}
                 onChange={(e) => setCep(e.target.value)}
@@ -153,7 +153,7 @@ export const Cadastro = ({ url }) => {
                 className="input__field"
                 type="text"
                 name="address"
-                placeholder="endereço"
+                placeholder=" "
                 value={address}
                 onChange={(e) => setAddress(e.target.value)}
               />
