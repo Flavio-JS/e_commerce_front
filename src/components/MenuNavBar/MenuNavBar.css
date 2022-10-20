@@ -1,0 +1,30 @@
+.menu-nav-bar {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #dbd4b1e0;
+  z-index: 3;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow-x: hidden;
+  transition: all 0.5s;
+}
+.menu-nav-bar i {
+  font-size: 2rem;
+  padding: 25px 20px;
+}
+.menu-nav-bar i:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}
+.menu-nav-bar li {
+  padding: 15px;
+  font-weight: bold;
+}
+.menu-nav-bar li:hover {
+  cursor: pointer;
+  opacity: 0.7;
+}

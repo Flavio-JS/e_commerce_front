@@ -1,0 +1,52 @@
+@import "../src/assets/css/global.css";
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+a:active {
+  opacity: 0.8;
+}
+
+a:focus {
+  background-color: transparent;
+  color: var(--letter-color);
+}
+
+ul {
+  list-style: none;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+#root {
+  width: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-eggshell);
+  width: 100%;
+  font-family: "Archivo", Arial, Helvetica, sans-serif;
+  color: var(--letter-color);
+  font-size: 16px;
+}
+
+.container {
+  max-width: var(--container-max-width);
+}

@@ -1,0 +1,328 @@
+.checkout__header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    /* height: 100vh; */
+}
+
+.checkout h1 {
+    display: flex;
+    align-items: baseline;
+    font-size: 3rem;
+}
+.checkout h6 {
+    font-size: 1rem;
+}
+
+.checkout img {
+    height: 60px;
+}
+
+.checkout__produtos {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    background-color: var(--bg-produtos);
+    margin-bottom: 20px;
+    width: 100%;
+    height: auto;
+}
+
+.checkout__produtos-tems {
+    overflow-y: auto;
+    width: 100%;
+    max-height: 400px;
+}
+
+.checkout__produtos-item {
+    display: flex;
+    width: 100%;
+    height: 100px;
+    justify-content: space-between;
+    /* border: solid 1px black; */
+    margin: 5px 0;
+}
+
+.checkout__produtos-img,
+.checkout__produtos-infos,
+.checkout__produtos-remove {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    height: 100%;
+
+    line-height: 17px;
+    text-align: start;
+}
+
+.checkout__produtos-remove {
+    padding-right: 15px;
+}
+
+.checkout__produtos-infos {
+    width: 200px;
+}
+
+.checkout__total-price {
+    max-width: 280px;
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.checkout__total-price-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 20px;
+}
+.checkout__total-price-item h1 {
+    width: 100%;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.checkout__infos-items {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 3rem;
+}
+.checkout__frete-price,
+.checkout__total-price-item__total-price {
+    display: flex;
+    width: 100%;
+    /* flex-direction: column; */
+    gap: 1.5rem;
+    justify-content: space-between;
+}
+
+.checkout__endereco {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.checkout__endereco ul {
+    width: 300px;
+}
+
+.checkout__endereco li {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.checkout__endereco-items {
+    width: 100px;
+}
+
+.checkout__endereco-button {
+    margin-top: 5px;
+}
+
+.checkout__metodo-pagamento {
+    display: flex;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    margin-bottom: 10px;
+}
+
+.checkout__input-text {
+    width: 100%;
+    padding: 5px;
+}
+
+.checkout__input-text:focus {
+    background-color: var(--bg-produtos);
+
+    color: var(--letter-color);
+}
+
+.checkout__produtos-icon {
+    cursor: pointer;
+    padding: 5px 5px;
+
+    border-radius: 50%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.checkout__pagamento{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.checkout__pagamento .checkout__metodo-pagamento{
+    background-color: rgb(192, 182, 252);
+    width: 40vw;
+    justify-content: center;
+    border-radius: 20px;
+    border: 1px solid black;
+}
+
+.checkout__pagamento .checkout__metodo-pagamento:hover{
+    background-color: rgb(119, 0, 255);
+    color: white;
+}
+
+.CardPix{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 20vw;
+    border-radius: 20px;
+    background-color: tan;
+    margin-bottom: 1%;
+    font-size: 1.3em;
+    transition: 0.3s ease-in ;
+    border: 1px solid black;
+    -webkit-box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+    -moz-box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+    box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+}
+
+.CardPix h3{
+    font-size: 1.2em;
+}
+
+.txt-pix-code{
+    border: 1px solid black;
+    padding: 3px;
+    font-size: 0.7em;
+}
+
+.CardCredit{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 30vw;
+    height: 30vw;
+    border-radius: 20px;
+    background-color: tan;
+    margin-bottom: 1%;
+    border: 1px solid black;
+    font-size: .8em;
+    transition: 0.3s ease-in ;
+    -webkit-box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+    -moz-box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+    box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+}
+
+.CardCredit input{
+    background-color: whitesmoke;
+    width: 20vw;
+    color: black;
+}
+
+.CardBoleto{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    height: 20vw;
+    border-radius: 20px;
+    background-color: tan;
+    margin-bottom: 1%;
+    border: 1px solid black;
+    font-size: 1.3em;
+    transition: 0.3s ease-in ;
+    -webkit-box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+    -moz-box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+    box-shadow: 1px 1.5px 22.5px -3.5px #373737;
+}
+
+.CardBoleto button{
+    border: 1px solid black;
+    width: 20vw;
+    height: 5vh;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 770px) {
+    .checkout {
+        margin-left: 10px;
+    }
+    .checkout__infos-items {
+        display: flex;
+        justify-content: space-around;
+    }
+    .checkout__endereco li {
+        justify-content: space-between;
+    }
+    
+    .checkout__pagamento .checkout__metodo-pagamento{
+        background-color: rgb(192, 182, 252);
+        width: 30vw;
+        justify-content: center;
+        border-radius: 20px;
+        border: 1px solid black;
+        transition: 0.3s ease-in ;
+    }
+    
+    .checkout__pagamento .checkout__metodo-pagamento:hover{
+        background-color: rgb(119, 0, 255);
+        color: white;
+    }
+
+    .CardBoleto{
+        width: 50vw;
+        transition: 0.3s ease-in ;
+    }
+
+    .CardBoleto button{
+        font-size: .9em;
+    }
+
+    .CardCredit{
+        width: 40vw;
+        height: 20vw;
+        font-size: 1.2em;
+        transition: 0.3s ease-in ;
+    }
+
+}
+
+@media (max-width: 509px){
+
+    .CardPix{
+        width: 50vw;
+        font-size: 90%
+    }
+
+    .txt-pix-code{
+        border: 1px solid black;
+        padding: 3px;
+        font-size:50%;
+    }
+
+}
+
+@media (max-width: 280px){
+    .CardPix{
+        width: 80vw;
+    }
+
+    .CardCredit{
+        width: 60vw;
+        height: 60vw;
+    }
+
+    .CardCredit input{
+        width: 30vw;
+    }
+}

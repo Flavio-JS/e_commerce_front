@@ -1,0 +1,143 @@
+.cadastro-container{
+  margin-top: 3%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.style-login-btn{
+  background-color: rgb(8, 6, 122);
+  color: white;
+}
+
+#name{
+    border: 1px solid black;
+}
+
+.login-create{
+  margin-top: 3rem;
+}
+
+.cadastro-container{
+  font-size: 1.2em;
+}
+
+/* .text-conta{
+  width: 35vw;
+  display: flex;
+  justify-content: space-between;
+} */
+
+.cadastro-container .area-cadastro input{
+  width: 100%;
+  height: 3.5rem;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.cadastro-container .area-cadastro-endereco input{
+  width: 100%;
+  height: 3.5rem;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+.cadastro-container .area-cadastro-endereco select{
+  width: 100%;
+  border-radius: 6px;
+  border: 1px solid black;
+}
+
+.cadastro-container .area-cadastro, .area-cadastro-endereco{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.cadastro-container .area-cadastro{
+  height: 70vh;
+}
+
+::placeholder{
+  font-size: 1.1em;
+  color: grey;
+}
+
+.text-container-header{
+  max-width: 99%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 0.8em;
+}
+
+:focus{
+  background-color: #232353;
+  color: white;
+}
+
+.cadastro-container h1{
+  margin-bottom: 3%;
+  font-size: 1.5em;
+}
+
+.login-create {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.CreateBtn-test{
+  color: white;
+  width: 40%;
+
+}
+
+.LoginBtn-test{
+  color: black;
+  margin-top: 2rem;
+  width: 40%;
+  background-color: white;
+}
+
+.LoginBtn-test:hover{
+  transition: 1s ease-in-out;
+  color: white;
+}
+
+@media only screen and (min-width: 770px){
+  .cadastro-container{
+    max-width: 99%;
+    max-width: 99%;
+    display: flex;
+  }
+
+  .header-text-container{
+    max-width: 99%;
+  }
+
+  .area-cadastro{
+    width: 40%;
+    margin-right: auto;
+  }
+  .area-cadastro-endereco{
+    width: 40%;
+  }
+
+  .cadastro-container .area-cadastro-endereco select{
+    height: 3.7rem;
+  }
+
+  .text-container-header{
+    max-width: 99%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-right: auto;
+    margin-left: auto;
+    font-size: 1.1em;
+  }
+}
