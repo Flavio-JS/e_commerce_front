@@ -1,0 +1,67 @@
+.cadastro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastro h1 {
+  margin-top: 20px;
+}
+
+.card {
+  background: var(--color-eggshell);
+  padding: calc(4 * 0.5rem);
+  margin-top: calc(4 * 0.5rem);
+  margin-bottom: calc(4 * 0.5rem);
+  border-radius: 4px;
+  border: 3px solid;
+  box-shadow: 0.5rem 0.5rem 0;
+  width: 90%;
+}
+
+.input {
+  position: relative;
+}
+
+.input__label {
+  position: absolute;
+  left: 0;
+  top: 0;
+  padding: calc(0.5rem * 0.75) calc(0.5rem * 0.5);
+  margin: calc(0.5rem * 0.75 + 3px) calc(0.5rem * 0.5);
+  background: pink;
+  white-space: nowrap;
+  transform: translate(0, 0);
+  transform-origin: 0 0;
+  background: var(--color-eggshell);
+  transition: transform 120ms ease-in;
+  font-weight: bold;
+  line-height: 1.2;
+}
+
+.input__field {
+  box-sizing: border-box;
+  display: block;
+  width: 100%;
+  border: 3px solid currentColor;
+  padding: calc(0.5rem * 1.5) 0.5rem;
+  margin-bottom: 12px;
+  color: currentColor;
+  background: transparent;
+  border-radius: 4px;
+}
+
+.input__field:not(:placeholder-shown) + .input__label {
+  transform: translate(0.25rem, -65%) scale(0.8);
+}
+
+.cadastro__login {
+  display: flex;
+  align-items: center;
+  height: 50vh;
+}
+
+.cadastro a {
+  margin-bottom: 15px;
+}

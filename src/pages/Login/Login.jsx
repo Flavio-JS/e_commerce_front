@@ -1,6 +1,6 @@
 import React from "react";
 import "./login-style.css";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 
@@ -8,7 +8,7 @@ export default function Login({
   customerData,
   setCustomerData,
   setAddressData,
-  url
+  url,
 }) {
   let [loginEmail, setLoginEmail] = useState("");
   let [loginPassword, setLoginPassword] = useState("");
@@ -193,7 +193,7 @@ export default function Login({
               className="space"
               style={{ display: "flex", justifyContent: "center" }}
             >
-              <h1>{customerData[0].name} está logado ! Deseja deslogar ?</h1>
+              <h1>{customerData[0].name} está logado !</h1>
             </div>
             <button
               className="space loginbtn"
@@ -213,6 +213,10 @@ export default function Login({
             >
               DESLOGAR
             </button>
+            <h1>Ou</h1>
+            <Link to="/">
+              <button className="space loginbtn">Ir para Home</button>
+            </Link>
           </div>
         </>
       )}

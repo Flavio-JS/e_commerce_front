@@ -2,8 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Home } from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
-import Cadastro from "./pages/Cadastro/cadastro";
-import CadastroTeste from "./pages/CadastroTeste/CadastroTeste";
+import Cadastro from "./pages/Cadastro/Cadastro";
 import { Produto } from "./pages/Produto/Produto";
 import { ProdutosPage } from "./pages/ProdutosPage/ProdutosPage";
 import { Routes, Route } from "react-router-dom";
@@ -76,8 +75,8 @@ function App() {
               />
             }
           ></Route>
-          {/* <Route path="/Cadastro" element={<Cadastro  url={url} />}></Route> */}
-          <Route path="/Cadastro" element={<CadastroTeste url={url} />}></Route>
+
+          <Route path="/Cadastro" element={<Cadastro url={url} />}></Route>
           <Route
             path="/Produto/:itemID/:nome"
             element={
