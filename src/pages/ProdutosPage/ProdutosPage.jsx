@@ -3,7 +3,7 @@ import { Produtos } from "../../components/Produtos/Produtos";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export const ProdutosPage = ({url}) => {
+export const ProdutosPage = ({ url }) => {
   const params = useParams();
 
   const [produtos, setProdutos] = useState([]);

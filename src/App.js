@@ -54,10 +54,6 @@ function App() {
           <Route index element={<Home url={url} />}></Route>
           <Route path="/:type" element={<ProdutosPage url={url} />}></Route>
           <Route
-            path="/:type/:type2"
-            element={<ProdutosPage url={url} />}
-          ></Route>
-          <Route
             path="/Login"
             element={
               <Login

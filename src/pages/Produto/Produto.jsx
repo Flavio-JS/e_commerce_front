@@ -1,6 +1,7 @@
 import "./Produto.css";
 import { useParams } from "react-router-dom";
 import { ButtonProduct } from "../../components/Button-product/Button-product";
+import { RelatedProducts } from "./RelatedProducts/RelatedProducts";
 import { useState, useEffect } from "react";
 
 export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
@@ -11,6 +12,7 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
       product_id: parseInt(itemId),
     },
   ]);
+  let [relatedProducts, setRelatedProducts] = useState();
 
   useEffect(() => {
     fetch(`${url}/products/${itemId}`)
@@ -36,6 +38,12 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
             img.style.transform = "scale(1)";
           });
         }, 1);
+      });
+
+    fetch(`${url}/relatedProducts/${itemId}`)
+      .then((res) => res.json())
+      .then((resultado) => {
+        setRelatedProducts(resultado);
       });
   }, [itemId]);
 
@@ -91,6 +99,9 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
                 url={url}
               />
             </div>
+          </section>
+          <section className="produto__container">
+            <RelatedProducts relatedProducts={relatedProducts} />
           </section>
         </>
       )}
