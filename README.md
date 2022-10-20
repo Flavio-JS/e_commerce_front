@@ -10,7 +10,7 @@
 ## API - Back-end
 
 **Click here:**
-<a href="https://github.com/hackadev2022/api_hackfashion" target="_blank"> Hackfashion </a>
+<a href="https://github.com/Flavio-JS/e_commerce_back" target="_blank"> Hackfashion </a>
 
 ## Available Scripts
 
