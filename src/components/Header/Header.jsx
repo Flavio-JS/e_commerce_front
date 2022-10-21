@@ -103,7 +103,7 @@ export const Header = ({ customerData }) => {
                 <NavLink to="/jeans">Jeans</NavLink>
               </li>
               <li>
-                <NavLink to="/jaqueta">Jaqueta</NavLink>
+                <NavLink to="/Favoritos">Favoritos ❤️</NavLink>
               </li>
             </ul>
           </nav>

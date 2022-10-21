@@ -10,6 +10,7 @@ import { Carrinho } from "./pages/Carrinho/Carrinho";
 import Checkout from "./pages/Checkout/Checkout";
 import UserConfigs from "./pages/UserConfigs/UserConfigs";
 import Layout from "./components/Layout/Layout";
+import { FavoritosPage } from "./pages/FavoritosPage/FavoritosPage";
 
 function App() {
   let [produtosCarrinho, setProdutosCarrinho] = useState([]);
@@ -63,7 +64,28 @@ function App() {
               />
             }
           ></Route>
-          <Route path="/:type" element={<ProdutosPage url={url} />}></Route>
+          <Route
+            path="/Favoritos"
+            element={
+              <FavoritosPage
+                url={url}
+                customerData={customerData}
+                setUpdate={setUpdate}
+                update={update}
+              />
+            }
+          ></Route>
+          <Route
+            path="/:type"
+            element={
+              <ProdutosPage
+                url={url}
+                customerData={customerData}
+                setUpdate={setUpdate}
+                update={update}
+              />
+            }
+          ></Route>
           <Route
             path="/Login"
             element={

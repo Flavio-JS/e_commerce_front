@@ -40,7 +40,7 @@ export const Cadastro = ({ url }) => {
       alert("CAMPO(S) NÃO PREENCHIDO(S) OU PREENCHIDOS INCORRETAMENTE");
     } else {
       try {
-        const customer_id = await axios.post(`${url}/customerteste`, {
+        const customer_id = await axios.post(`${url}/customer`, {
           name,
           email,
           password,

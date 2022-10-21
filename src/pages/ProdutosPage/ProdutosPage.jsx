@@ -3,7 +3,7 @@ import { Produtos } from "../../components/Produtos/Produtos";
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-export const ProdutosPage = ({ url }) => {
+export const ProdutosPage = ({ url, customerData, setUpdate, update }) => {
   const params = useParams();
 
   const [produtos, setProdutos] = useState([]);
@@ -23,7 +23,14 @@ export const ProdutosPage = ({ url }) => {
         {!params.type2 && (
           <>
             {produtos.map((produto, key) => (
-              <Produtos key={key} produto={produto} />
+              <Produtos
+                key={produto.product_id}
+                produto={produto}
+                url={url}
+                customerData={customerData}
+                setUpdate={setUpdate}
+                update={update}
+              />
             ))}
           </>
         )}
