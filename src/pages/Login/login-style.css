@@ -115,6 +115,10 @@ body {
   transition: 0.5s cubic-bezier(0.47, 0, 0.745, 0.715);
 }
 
+.login__button {
+  margin-bottom: 10px;
+}
+
 @media (max-width: 280px) {
   ::-webkit-input-placeholder {
     /* Chrome/Opera/Safari */
@@ -139,7 +143,6 @@ body {
 
   ::placeholder {
     text-align: center;
-    color: white;
   }
 }
 

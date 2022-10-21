@@ -269,31 +269,3 @@
     justify-content: space-between;
   }
 }
-
-@media (max-width: 509px) {
-  .CardPix {
-    width: 50vw;
-    font-size: 90%;
-  }
-
-  .txt-pix-code {
-    border: 1px solid black;
-    padding: 3px;
-    font-size: 50%;
-  }
-}
-
-@media (max-width: 280px) {
-  .CardPix {
-    width: 80vw;
-  }
-
-  .CardCredit {
-    width: 60vw;
-    height: 60vw;
-  }
-
-  .CardCredit input {
-    width: 30vw;
-  }
-}

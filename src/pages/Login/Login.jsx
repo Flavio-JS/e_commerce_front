@@ -1,8 +1,9 @@
 import React from "react";
 import "./login-style.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
+import { Button } from "../../components/Button/Button";
 
 export default function Login({
   customerData,
@@ -44,32 +45,32 @@ export default function Login({
       {customerData[0].loged === false && (
         <>
           <div className="login-container">
-            <input
-              className="in-text-pass"
-              type="text"
-              name="loginId"
-              placeholder="exemplo@exemplo.com"
-              value={loginEmail}
-              onChange={(e) => setLoginEmail(e.target.value)}
-            ></input>
-            <div className="space"></div>
-            <input
-              className="in-text-pass"
-              type="password"
-              name="loginPassword"
-              value={loginPassword}
-              placeholder="SENHA"
-              onChange={(e) => setLoginPassword(e.target.value)}
-            ></input>
-            <button
-              className="space loginbtn"
-              onClick={() => {
-                login();
-              }}
-            >
-              LOGIN
-            </button>
-            <br></br>
+            <div className="card">
+              <label className="input">
+                <input
+                  className="input__field"
+                  type="text"
+                  name="loginId"
+                  placeholder=" "
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
+                />
+                <span className="input__label">Email</span>
+              </label>
+              <label className="input">
+                <input
+                  className="input__field"
+                  type="password"
+                  name="loginPassword"
+                  value={loginPassword}
+                  placeholder=" "
+                  onChange={(e) => setLoginPassword(e.target.value)}
+                />
+                <span className="input__label">Senha</span>
+              </label>
+            </div>
+            <Button txt={"Login"} fn={login} classes={"login__button"} />
+
             <p>Não é cadastrado?</p>
             <Link className="link-style" to="/Cadastro">
               Cadastre-se
