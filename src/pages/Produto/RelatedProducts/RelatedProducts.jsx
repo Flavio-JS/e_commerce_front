@@ -1,7 +1,12 @@
 import { Produtos } from "../../../components/Produtos/Produtos";
 import "./RelatedProducts.css";
 
-export const RelatedProducts = ({ relatedProducts }) => {
+export const RelatedProducts = ({
+  relatedProducts,
+  url,
+  customerData,
+  setUpdate,
+}) => {
   return (
     <>
       <section className="section__relatedProducts justify-center">
@@ -10,7 +15,13 @@ export const RelatedProducts = ({ relatedProducts }) => {
           {relatedProducts !== undefined && (
             <>
               {relatedProducts.map((produto) => (
-                <Produtos key={produto.product_id} produto={produto} />
+                <Produtos
+                  key={produto.product_id}
+                  produto={produto}
+                  url={url}
+                  customerData={customerData}
+                  setUpdate={setUpdate}
+                />
               ))}
             </>
           )}

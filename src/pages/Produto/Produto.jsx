@@ -4,7 +4,14 @@ import { ButtonProduct } from "../../components/Button-product/Button-product";
 import { RelatedProducts } from "./RelatedProducts/RelatedProducts";
 import { useState, useEffect } from "react";
 
-export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
+export const Produto = ({
+  produtosCarrinho,
+  setProdutosCarrinho,
+  url,
+  customerData,
+  setUpdate,
+  update,
+}) => {
   const params = useParams();
   const itemId = params.itemID;
   const [product, setProduct] = useState([
@@ -101,7 +108,13 @@ export const Produto = ({ produtosCarrinho, setProdutosCarrinho, url }) => {
             </div>
           </section>
 
-          <RelatedProducts relatedProducts={relatedProducts} />
+          <RelatedProducts
+            relatedProducts={relatedProducts}
+            url={url}
+            customerData={customerData}
+            setUpdate={setUpdate}
+            update={update}
+          />
         </>
       )}
     </>

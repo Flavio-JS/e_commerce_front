@@ -4,7 +4,7 @@ import { Slider } from "../../components/Slider/Slider";
 import { Produtos } from "../../components/Produtos/Produtos";
 import { useState, useEffect } from "react";
 
-export const Home = ({url}) => {
+export const Home = ({ url, customerData, setUpdate, update }) => {
   const [produtos, setProdutos] = useState([]);
 
   useEffect(() => {
@@ -42,14 +42,28 @@ export const Home = ({url}) => {
         {!showOffersOnly && (
           <>
             {produtos.map((produto) => (
-              <Produtos key={produto.product_id} produto={produto} />
+              <Produtos
+                key={produto.product_id}
+                produto={produto}
+                url={url}
+                customerData={customerData}
+                setUpdate={setUpdate}
+                update={update}
+              />
             ))}
           </>
         )}
         {showOffersOnly && (
           <>
             {produtosOffer.map((produto) => (
-              <Produtos key={produto.product_id} produto={produto} />
+              <Produtos
+                key={produto.product_id}
+                produto={produto}
+                url={url}
+                customerData={customerData}
+                setUpdate={setUpdate}
+                update={update}
+              />
             ))}
           </>
         )}

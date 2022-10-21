@@ -124,6 +124,10 @@
   z-index: 2;
 }
 
+.produtos__out-of-stock b h1 {
+  margin: 0;
+}
+
 .produtos__out-of-stock:hover b {
   height: 100%;
   width: 100%;

@@ -19,11 +19,6 @@ const Checkout = ({
 }) => {
   const [ignore, setIgnore] = useState(true);
   //Valor dos Input Radio
-  const [pixValue, setPixValue] = useState();
-
-  const valueLog = (event) => {
-    setPixValue(event.target.value);
-  };
 
   const handleMinusQuant = (key) => {
     if (produtosCarrinho[key].quantidade > 1) {

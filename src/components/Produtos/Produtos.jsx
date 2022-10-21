@@ -6,28 +6,61 @@ import { useState } from "react";
 import { Button } from "../Button/Button";
 import { useEffect } from "react";
 import { useRef } from "react";
+import axios from "axios";
 
-export const Produtos = ({ produto }) => {
+export const Produtos = ({ produto, url, customerData, setUpdate, update }) => {
   //Stars//
-  const [update, setUpdate] = useState(false);
 
   let numberOfStars = useRef(1);
   let totalStars = useRef(0);
+  let [favProduct, setFavProduct] = useState("notFav");
 
   useEffect(() => {
-    fetch(`http://15.228.244.21:3000/productStar/${produto.product_id}`)
+    fetch(`${url}/productStar/${produto.product_id}`)
       .then((res) => res.json())
       .then((resultado) => {
         totalStars.current = resultado[0].totalStars;
         numberOfStars.current = resultado[0].numberOfStars;
         setUpdate(!update);
       });
+    if (customerData[0].customer_id !== "") {
+      fetch(
+        `${url}/favProduct/${customerData[0].customer_id}/${produto.product_id}`
+      )
+        .then((res) => res.json())
+        .then((resultado) => {
+          setFavProduct(resultado[0].fav);
+        });
+    }
   }, [produto.product_id]);
 
   //Stars//
 
   //Heart//
-  let [favoriteHeart, setFavoriteHeart] = useState("");
+
+  const handleClickHeart = async () => {
+    if (favProduct === "notFav") {
+      setFavProduct("fav");
+      try {
+        await axios.put(`${url}/favProduct`, {
+          product_id: produto.product_id,
+          user_id: customerData[0].customer_id,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    } else if (favProduct === "fav") {
+      setFavProduct("notFav");
+      try {
+        await axios.post(`${url}/deletFavProduct`, {
+          product_id: produto.product_id,
+          user_id: customerData[0].customer_id,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+  };
   //Heart//
 
   const formatPrice = (price) => {
@@ -48,15 +81,26 @@ export const Produtos = ({ produto }) => {
           </div>
           <div className="produtos">
             <div className="produtos__top">
-              <FontAwesomeIcon
-                icon={faHeart}
-                onClick={() => {
-                  favoriteHeart === ""
-                    ? setFavoriteHeart("red")
-                    : setFavoriteHeart("");
-                }}
-                style={{ color: `${favoriteHeart}`, transition: "all 0.3s" }}
-              />
+              {favProduct === "notFav" && (
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  onClick={() => {
+                    handleClickHeart();
+                  }}
+                  style={{ color: ` `, transition: "all 0.3s" }}
+                />
+              )}
+
+              {favProduct === "fav" && (
+                <FontAwesomeIcon
+                  icon={faHeart}
+                  onClick={() => {
+                    handleClickHeart();
+                  }}
+                  style={{ color: `red`, transition: "all 0.3s" }}
+                />
+              )}
+
               <div className="produtos__img">
                 <img src={produto.img_link} alt={produto.name} />
               </div>
@@ -199,15 +243,25 @@ export const Produtos = ({ produto }) => {
       {produto.in_stock && (
         <div className="produtos">
           <div className="produtos__top">
-            <FontAwesomeIcon
-              icon={faHeart}
-              onClick={() => {
-                favoriteHeart === ""
-                  ? setFavoriteHeart("red")
-                  : setFavoriteHeart("");
-              }}
-              style={{ color: `${favoriteHeart}`, transition: "all 0.3s" }}
-            />
+            {favProduct === "notFav" && (
+              <FontAwesomeIcon
+                icon={faHeart}
+                onClick={() => {
+                  handleClickHeart();
+                }}
+                style={{ color: ` `, transition: "all 0.3s" }}
+              />
+            )}
+
+            {favProduct === "fav" && (
+              <FontAwesomeIcon
+                icon={faHeart}
+                onClick={() => {
+                  handleClickHeart();
+                }}
+                style={{ color: `red`, transition: "all 0.3s" }}
+              />
+            )}
             <NavLink
               to={`/Produto/${produto.product_id}/${produto.name}`}
               onClick={() => {

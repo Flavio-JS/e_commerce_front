@@ -46,11 +46,23 @@ function App() {
     },
   ]);
 
+  let [update, setUpdate] = useState(false);
+
   return (
     <>
       <Routes>
         <Route path="/" element={<Layout customerData={customerData} />}>
-          <Route index element={<Home url={url} />}></Route>
+          <Route
+            index
+            element={
+              <Home
+                url={url}
+                customerData={customerData}
+                setUpdate={setUpdate}
+                update={update}
+              />
+            }
+          ></Route>
           <Route path="/:type" element={<ProdutosPage url={url} />}></Route>
           <Route
             path="/Login"
@@ -84,6 +96,9 @@ function App() {
                 url={url}
                 produtosCarrinho={produtosCarrinho}
                 setProdutosCarrinho={setProdutosCarrinho}
+                customerData={customerData}
+                setUpdate={setUpdate}
+                update={update}
               />
             }
           ></Route>
