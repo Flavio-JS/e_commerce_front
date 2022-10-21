@@ -44,12 +44,6 @@ export const Slider = () => {
             <i className="name">Moletom</i>
           </NavLink>
         </SwiperSlide>
-        <SwiperSlide>
-          <NavLink to="/jaqueta">
-            <img src="img/roupas_sem_fundo/sweatshirt1.png" alt="sweatshirt" />
-            <i className="name">Jaqueta</i>
-          </NavLink>
-        </SwiperSlide>
       </Swiper>
     </>
   );

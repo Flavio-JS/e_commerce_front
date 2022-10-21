@@ -6,7 +6,7 @@ import { useState } from "react";
 import { Button } from "../../components/Button/Button";
 import axios from "axios";
 import { useEffect } from "react";
-import Cards from "./PaymentsCards/Cards";
+
 import Sucess from "./PaymentsCards/SucessPayment/Sucess";
 
 const Checkout = ({
@@ -170,10 +170,10 @@ const Checkout = ({
                   </NavLink>
                 </h1>
               </div>
-              <div className="checkout__produtos">
-                <div className="checkout__produtos-tems">
+              <div className="checkout__produtos card">
+                <div className="checkout__produtos-tems ">
                   {produtosCarrinho.map((produto, key) => (
-                    <div key={key} className="checkout__produtos-item">
+                    <div key={key} className="checkout__produtos-item card">
                       <div className="checkout__produtos-img">
                         <img src={produto.img_link} alt={produto.name} />
                       </div>
@@ -226,52 +226,69 @@ const Checkout = ({
                 <>
                   <div className="checkout__infos">
                     <h1>Destino</h1>
+                    <div className="card">
+                      <label className="input">
+                        <input
+                          className="input__field"
+                          type="text"
+                          name="name"
+                          disabled
+                          placeholder={`${customerData[0].name}`}
+                        />
+                        <span className="input__label">Remetente</span>
+                      </label>
+                      <label className="input">
+                        <input
+                          className="input__field"
+                          type="text"
+                          name="name"
+                          disabled
+                          placeholder={`${addressData.address}`}
+                        />
+                        <span className="input__label">Endereço</span>
+                      </label>
+                      <label className="input">
+                        <input
+                          className="input__field"
+                          type="text"
+                          name="name"
+                          disabled
+                          placeholder={`${addressData.city}`}
+                        />
+                        <span className="input__label">Cidade</span>
+                      </label>
+                      <label className="input">
+                        <input
+                          className="input__field"
+                          type="text"
+                          name="name"
+                          disabled
+                          placeholder={`${addressData.uf}`}
+                        />
+                        <span className="input__label">Estado</span>
+                      </label>
+                      <label className="input">
+                        <input
+                          className="input__field"
+                          type="text"
+                          name="name"
+                          disabled
+                          placeholder={`${addressData.cep}`}
+                        />
+                        <span className="input__label">CEP</span>
+                      </label>
+                      <NavLink to="/userConfigs">
+                        <Button
+                          txt={"Editar Endereço"}
+                          classes={"checkout__endereco-button"}
+                        />
+                      </NavLink>
+                    </div>
                     <div className="checkout__infos-items">
-                      <div className="checkout__endereco">
-                        <>
-                          <ul>
-                            <li>
-                              <b className="checkout__endereco-items">
-                                Remetente:{" "}
-                              </b>
-                              {customerData[0].name}
-                            </li>
-                            <li>
-                              <b className="checkout__endereco-items">
-                                Endereco:{" "}
-                              </b>
-                              {addressData.address}
-                            </li>
-                            <li>
-                              <b className="checkout__endereco-items">
-                                Cidade:{" "}
-                              </b>
-                              {addressData.city}
-                            </li>
-                            <li>
-                              <b className="checkout__endereco-items">
-                                Estado:{" "}
-                              </b>
-                              {addressData.uf}
-                            </li>
-                            <li>
-                              <b className="checkout__endereco-items">CEP: </b>
-                              {addressData.cep}
-                            </li>
-                          </ul>
-                          <NavLink to="/userConfigs">
-                            <Button
-                              txt={"Editar"}
-                              classes={"checkout__endereco-button"}
-                            />
-                          </NavLink>
-                        </>
-                      </div>
                       <div className="checkout__pagamento">
                         <h1>Pagamento</h1>
                         <div className="checkout__total-price">
                           <div className="checkout__total-price-item">
-                            <h3>Como deseja pagar ?</h3>
                             <div className="checkout__frete-price">
                               <h3>Entrega</h3>
                               <h3>R$ 30, 00</h3>
@@ -283,97 +300,10 @@ const Checkout = ({
                           </div>
                         </div>
 
-                        <div className="checkout__metodo-pagamento">
-                          <input
-                            type="radio"
-                            name="payment-method"
-                            id="pix"
-                            value="Pix"
-                            onChange={valueLog}
-                            onClick={valueLog}
-                          />
-                          <label htmlFor="pix">
-                            <div>
-                              <i className="fa-brands fa-pix"></i>
-                              PIX
-                            </div>
-                          </label>
-                        </div>
-                        <div className="checkout__metodo-pagamento">
-                          <input
-                            type="radio"
-                            name="payment-method"
-                            id="boleto"
-                            value="Boleto"
-                            onChange={(e) => setPixValue(e.target.value)}
-                            onClick={valueLog}
-                          />
-                          <label htmlFor="boleto">
-                            <div>
-                              <i className="fa-solid fa-barcode"></i>
-                              Boleto
-                            </div>
-                          </label>
-                        </div>
-                        <div className="checkout__metodo-pagamento">
-                          <input
-                            type="radio"
-                            name="payment-method"
-                            id="cartao-credito"
-                            value="Cartão de crédito"
-                            onChange={(e) => setPixValue(e.target.value)}
-                            onClick={valueLog}
-                          />
-                          <label htmlFor="cartao-credito">
-                            <div>
-                              <i className="fa-solid fa-credit-card"></i>
-                              Cartão de crédito
-                            </div>
-                          </label>
-                        </div>
-
-                        {pixValue === "Pix" && (
-                          <Cards
-                            styleCards={"CardPix"}
-                            text={
-                              <>
-                                <h3>Copie o codigo abaixo</h3>
-                                <br />
-                                <p className="txt-pix-code">
-                                  #b3_?4?hV;nUx7VPDNz+b*EA!%Z$Kv7
-                                </p>
-                              </>
-                            }
-                          />
-                        )}
-
-                        {pixValue === "Boleto" && (
-                          <Cards
-                            styleCards={"CardBoleto"}
-                            text={<button>Gerar Boleto</button>}
-                          />
-                        )}
-
-                        {pixValue === "Cartão de crédito" && (
-                          <Cards
-                            styleCards={"CardCredit"}
-                            text={
-                              <>
-                                <label>Nome</label>
-                                <input type="text" />
-                                <br />
-                                <label>Numero cartão</label>
-                                <input type="number" />
-                                <br />
-                                <label>CVV</label>
-                                <input type="number" />
-                              </>
-                            }
-                          />
-                        )}
                         <Button
                           txt={"Finalizar Compra"}
                           fn={finalizePurchase}
+                          classes={"checkout__button"}
                         />
                       </div>
                     </div>
