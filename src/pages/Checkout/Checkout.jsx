@@ -9,7 +9,7 @@ import { useEffect } from "react";
 
 import Sucess from "./PaymentsCards/SucessPayment/Sucess";
 
-const Checkout = ({
+export const Checkout = ({
   produtosCarrinho,
   isLoged,
   customerData,

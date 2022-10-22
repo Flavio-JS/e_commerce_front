@@ -5,12 +5,12 @@ import { useState } from "react";
 import axios from "axios";
 import { Button } from "../../components/Button/Button";
 
-export default function Login({
+export const Login = ({
   customerData,
   setCustomerData,
   setAddressData,
   url,
-}) {
+}) => {
   let [loginEmail, setLoginEmail] = useState("");
   let [loginPassword, setLoginPassword] = useState("");
   let [update, setUpdate] = useState(false);
@@ -223,4 +223,6 @@ export default function Login({
       )}
     </>
   );
-}
+};
+
+export default Login;

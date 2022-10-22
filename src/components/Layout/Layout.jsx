@@ -3,7 +3,7 @@ import { Header } from "../Header/Header";
 import { Footer } from "../Footer/Footer";
 import "./Layout.css";
 
-const Layout = ({ customerData }) => {
+export const Layout = ({ customerData }) => {
   return (
     <>
       <Header customerData={customerData} />

@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 import { Home } from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Cadastro from "./pages/Cadastro/Cadastro";
+import { Login } from "./pages/Login/Login";
+import { Cadastro } from "./pages/Cadastro/Cadastro";
 import { Produto } from "./pages/Produto/Produto";
 import { ProdutosPage } from "./pages/ProdutosPage/ProdutosPage";
 import { Routes, Route } from "react-router-dom";
 import { Carrinho } from "./pages/Carrinho/Carrinho";
-import Checkout from "./pages/Checkout/Checkout";
-import UserConfigs from "./pages/UserConfigs/UserConfigs";
-import Layout from "./components/Layout/Layout";
+import { Checkout } from "./pages/Checkout/Checkout";
+import { UserConfigs } from "./pages/UserConfigs/UserConfigs";
+import { Layout } from "./components/Layout/Layout";
 import { FavoritosPage } from "./pages/FavoritosPage/FavoritosPage";
 
 function App() {
