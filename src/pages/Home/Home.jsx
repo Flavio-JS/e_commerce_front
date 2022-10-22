@@ -13,7 +13,7 @@ export const Home = ({ url, customerData, setUpdate, update }) => {
       .then((resultado) => {
         setProdutos(resultado);
       });
-  }, []);
+  }, [url]);
 
   const produtosOffer = produtos.filter((produto) => produto.offer_percent > 0);
 

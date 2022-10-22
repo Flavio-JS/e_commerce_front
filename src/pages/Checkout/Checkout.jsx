@@ -96,7 +96,7 @@ const Checkout = ({
           setAddressId(resultado);
         });
     }
-  }, []);
+  }, [url, customer_id]);
 
   const [loading, setLoading] = useState(true);
 

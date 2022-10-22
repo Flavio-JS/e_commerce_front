@@ -52,7 +52,7 @@ export const Produto = ({
       .then((resultado) => {
         setRelatedProducts(resultado);
       });
-  }, [itemId]);
+  }, [itemId, url]);
 
   const formatPrice = (price) => {
     return price.toLocaleString("pt-BR", {

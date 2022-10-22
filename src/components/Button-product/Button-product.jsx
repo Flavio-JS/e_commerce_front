@@ -30,6 +30,7 @@ export const ButtonProduct = ({
     productSizeG,
     productSizeGG,
     produto.product_id,
+    url,
   ]);
 
   const [prodCount, setProdCount] = useState(1);

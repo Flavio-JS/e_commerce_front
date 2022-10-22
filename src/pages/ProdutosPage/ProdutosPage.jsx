@@ -14,7 +14,7 @@ export const ProdutosPage = ({ url, customerData, setUpdate, update }) => {
       .then((resultado) => {
         setProdutos(resultado);
       });
-  }, [params.type]);
+  }, [params.type, url]);
 
   return (
     <>
